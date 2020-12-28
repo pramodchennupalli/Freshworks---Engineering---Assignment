@@ -19,3 +19,18 @@ def create(key, value, timeout=0):
         else:
             print('error: Memory limit exceeded')
 
+
+def read(key):
+    if key not in dict:
+        print('error: Given key not found. Enter valid Key')
+
+    else:
+
+        p = dict[key]
+        if p[1] != 0:
+            if time.time() < p[1]:
+                return str(key)+":"+str(p[0])
+            else:
+                print('error: time-to-live of', key, 'has expired')
+        else:
+            return str(key)+':'+str(p[0])

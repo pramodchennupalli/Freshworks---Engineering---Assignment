@@ -1,3 +1,7 @@
+import threading
+import time
+from threading import *
+
 dict = {}
 
 def create(key, value, timeout=0):

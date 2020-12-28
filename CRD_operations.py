@@ -23,9 +23,7 @@ def create(key, value, timeout=0):
 def read(key):
     if key not in dict:
         print('error: Given key not found. Enter valid Key')
-
     else:
-
         p = dict[key]
         if p[1] != 0:
             if time.time() < p[1]:

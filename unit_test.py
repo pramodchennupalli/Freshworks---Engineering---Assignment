@@ -12,3 +12,9 @@ crd.delete('pro') #return error because key not existed in database
 
 crd.delete('bhaskar') #return delete respective key from database
 
+t1 = Thread(target = (create or read or delete), args = (key, value, timeout)) #as per the operation
+t1.start()
+t1.sleep()
+t2 = Thread(target = (create or read or delete), args = (key, value, timeout)) #as per the operation
+t2.start()
+t2.sleep()

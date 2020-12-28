@@ -32,3 +32,20 @@ def read(key):
                 print('error: time-to-live of', key, 'has expired')
         else:
             return str(key)+':'+str(p[0])
+
+
+def delete(key):
+    if key not in dict:
+        print('error: Given key not found. Enter valid Key')
+    else:
+        p = dict[key]
+        if p[1] != 0:
+            if time.time() < p[1]:
+                del dict[key]
+                print('Deleted Successfully !!')
+            else:
+                print('error: time-to-live of', key, 'has expired')
+        else:
+            del p[key]
+            print('Deleted Successfully !!')
+
